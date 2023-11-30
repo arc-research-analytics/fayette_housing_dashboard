@@ -405,6 +405,10 @@ def mapper_3D():
     joined_df['var_formatted'] = joined_df[dash_variable_dict[dash_variable][0]].apply(
         lambda x: dash_variable_dict[dash_variable][2].format((x)))
 
+    # format the total sales to show thousands separator
+    joined_df['yr_built_3D'] = joined_df['yr_built'].apply(
+        lambda x: '{:,.0f}'.format(x))
+
     # create a 'label' column
     joined_df['dashboard_var_label'] = dash_variable
 
@@ -448,7 +452,7 @@ def mapper_3D():
     )
 
     tooltip = {
-        "html": "Median {dashboard_var_label}: <b>{var_formatted}</b><br>Total sales: <b>{yr_built}</b><hr style='margin: 10px auto; opacity:0.5; border-top: 2px solid white; width:85%'>\
+        "html": "Median {dashboard_var_label}: <b>{var_formatted}</b><br>Total sales: <b>{yr_built_3D}</b><hr style='margin: 10px auto; opacity:0.5; border-top: 2px solid white; width:85%'>\
                     Census Tract {GEOID} <br>\
                     {Sub_geo}",
         "style": {"background": "rgba(2,43,58,0.7)",
