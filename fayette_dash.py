@@ -609,7 +609,7 @@ def plotly_charter():
         2020: '2020-12',
         2021: '2021-12',
         2022: '2022-12',
-        2023: '2023-6'
+        2023: '2023-8'
     }
 
     fig.add_vline(x=year_start[years[0]], line_width=2,
