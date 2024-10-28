@@ -35,8 +35,7 @@ custom_colors = [tuple(int(h.lstrip('#')[i:i+2], 16)
 st.set_page_config(
     page_title=f"{county_var} County Housing Trends",
     page_icon=":house:",
-    layout="wide",
-    initial_sidebar_state="collapsed"
+    layout="wide"
 )
 
 # the custom CSS lives here:
